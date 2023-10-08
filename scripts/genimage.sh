@@ -108,12 +108,12 @@ cp -R android-image-flashing-template/template/* ${WORK_DIR}/target/
 mv ${WORK_DIR}/userdata.img ${WORK_DIR}/target/data/userdata.img
 
 apt update
-apt install wget -y
+apt install wget p7zip-full -y
 wget https://github.com/droidian-mt6833/adaptation-droidian-evergreen/releases/download/adaptation/boot.img
 cp ./boot.img ${WORK_DIR}/target/data/boot.img
 
-# generate zip
-echo "Generating zip"
-(cd ${WORK_DIR}/target ; zip -r9 ../../out/$ZIP_NAME * -x .git README.md *placeholder)
+# generate 7z
+echo "Generating 7z"
+(cd ${WORK_DIR}/target ; 7z a -t7z -m0=lzma2 -mx=9 ../../out/$ZIP_NAME * -x'!.git' -x'!README.md' -xr'!*placeholder')
 
 echo "done."
