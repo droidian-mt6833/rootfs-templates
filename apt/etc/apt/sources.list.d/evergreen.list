@@ -1,1 +1,1 @@
-deb [signed-by=/var/lib/extrepo/keys/evergreen.asc] https://mmtrt.github.io/evergreen-repo/debian/trixie ./
+deb [signed-by=/var/lib/extrepo/keys/evergreen.asc] https://mmtrt.github.io/evergreen-repo/droidian ./
